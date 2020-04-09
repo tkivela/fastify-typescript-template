@@ -1,0 +1,44 @@
+{
+  "name": "fastify-typescript-template",
+  "version": "1.0.0",
+  "description": "Fastify TypeScript Template",
+  "main": "main.js",
+  "scripts": {
+    "dev": "nodemon --config nodemon-debug.json",
+    "test": "jest",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "build": "rimraf dist && yarn test && tsc",
+    "prod": "cross-env NODE_ENV=production node dist/main.js",
+    "docker-build": "docker build -t fastify-typescript-template .",
+    "docker-run": "docker run -p 3042:3042 fastify-typescript-template",
+    "docker-stop": "docker stop $(docker ps -q --filter ancestor=fastify-typescript-template)"
+  },
+  "author": "Tommi Kivelä",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "2.13.0"
+  },
+  "devDependencies": {
+    "@types/jest": "25.2.1",
+    "@types/node": "13.11.0",
+    "@typescript-eslint/eslint-plugin": "2.27.0",
+    "@typescript-eslint/parser": "2.27.0",
+    "cross-env": "7.0.2",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.1",
+    "eslint-plugin-jest": "23.8.2",
+    "jest": "25.2.7",
+    "nodemon": "2.0.2",
+    "prettier": "2.0.4",
+    "rimraf": "3.0.2",
+    "ts-jest": "25.3.1",
+    "ts-node": "8.8.2",
+    "tsconfig-paths": "3.9.0",
+    "typescript": "3.8.3"
+  },
+  "engines": {
+    "node": ">=12",
+    "yarn": ">=1"
+  }
+}

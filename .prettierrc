@@ -1,0 +1,15 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "arrowParens": "always",
+  "printWidth": 100,
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": "*.ts",
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ]
+}
